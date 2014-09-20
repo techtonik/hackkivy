@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+
+<ExcursionTitle name="HackForFuture3">
+
+<exhibit id="1">
+	<description> Welcome </description>
+	<audio URL="audio/welcome.mp3" time='30'/>
+	<visual URL="img/welcome.png"/>
+	<x>200</x>
+	<y>0</y>
+	<phi>60</phi>
+	<time>10</time>
+</exhibit>
+
+<exhibit id="2">
+	<description> Common Info </description>
+	<audio URL="audio/common.mp3" time='30'/>
+	<visual URL="img/common.png"/>
+	<x>0</x>
+	<y>200</y>
+	<phi>0</phi>
+	<time>10</time>
+</exhibit>
+
+<exhibit id="3">
+	<description> Infocenter </description>
+	<audio URL="audio/info.mp3" time='25'/>
+	<visual URL="img/infocenter.png"/>
+	<x>-300</x>
+	<y>0</y>
+	<phi>10</phi>
+	<time>10</time>
+</exhibit>
+
+<exhibit id="4">
+	<description> Bar </description>
+	<audio URL="audio/bar.mp3" time='25'/>
+	<visual URL="img/bar.png"/>
+	<x>200</x>
+	<y>700</y>
+	<phi>0</phi>
+	<time>10</time>
+</exhibit>
+
+<exhibit id="5">
+	<description> Kalilaska </description>
+	<audio URL="audio/Kalilaska.mp3" time='30'/>
+	<visual URL="img/kalilaska.png"/>
+	<x>100</x>
+	<y>0</y>
+	<phi>30</phi>
+	<time>10</time>
+</exhibit>
+
+<exhibit id="6">
+	<description> End </description>
+	<audio URL="audio/end.mp3" time='25'/>
+	<visual URL="img/end.png"/>
+	<x>0</x>
+	<y>100</y>
+	<phi>0</phi>
+	<time>10</time>
+</exhibit>
+
+</ExcursionTitle>

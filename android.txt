@@ -1,0 +1,3 @@
+title=Rodot Guide Face
+author=BrSTU-Robotics.org
+orientation=landscape
