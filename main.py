@@ -3,6 +3,7 @@ import kivy
 kivy.require('1.8.0') # replace with your current kivy version !
 
 from kivy.app import App
+from kivy.clock import Clock
 from kivy.uix.button import Button
 from kivy.uix.label import Label
 from kivy.uix.image import Image
@@ -65,7 +66,7 @@ class RobotGuideApp(App):
 			widget = self.root.ids.Logo
 		self.root.add_widget(widget, index=1)
 
-	def move_to_exhibit(self, index=None):
+        def move_to_exhibit(self, dt=0, index=None):
 		global gRoot
 		gRoot = self.root
 		if index is None:
@@ -76,25 +77,28 @@ class RobotGuideApp(App):
 
 		reqstring = appconstants.HOST + '?' + str(data['x']) + '&' + str(data['y']) + '&' + str(data['phi'])
 		req = UrlRequest(reqstring)
-		sleep(data['time'])
 
-		self.sound = SoundLoader.load(data['audiourl'])
-		## self.sound.bind(on_stop=self.sound_stop)
-		# stop the sound if it's currently playing
-		if self.sound.status != 'stop':
-			self.sound.stop()
-		else:
-			self.root.ids.MainButton.text = data['description']
-			self.sound.play()
-			sleep(data['audiotime'])
+		if 0:
+			self.sound = SoundLoader.load(data['audiourl'])
+			## self.sound.bind(on_stop=self.sound_stop)
+			# stop the sound if it's currently playing
+			if self.sound.status != 'stop':
+				self.sound.stop()
+			else:
+				self.root.ids.MainButton.text = data['description']
+				self.sound.play()
+				sleep(data['audiotime'])
 
-		if self.currentindex < len(self.exhibits) - 2:
-			self.currentindex += 1
-		else:
-			self.show()
-			self.root.ids.MainButton.text = 'Start over'
+       		if self.currentindex < len(self.exhibits) - 2:
+       			self.currentindex += 1
+       		else:
+       			self.show()
+       			self.root.ids.MainButton.text = 'Start over'
 			
-		self.move_to_exhibit()
+                #sleep(data['time'])
+                # self.move_to_exhibit()
+                Clock.schedule_once(self.move_to_exhibit, data['time'])
+  
 
 if __name__ == '__main__':
 	RobotGuideApp().run()
